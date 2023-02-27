@@ -15,6 +15,10 @@ body {
     font-family:'Poppins', sans-serif;
 }
 
+ul {
+    list-style:none;
+}
+
 header {
     position:fixed;
     top: 0;
@@ -207,6 +211,7 @@ p {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    font-size:24px;
     letter-spacing: 0.02em;
     color:var(--text-color);
 }
@@ -356,4 +361,61 @@ section {
     font-size: 32px;
     line-height: 40px;
     margin-bottom:32px;
+}
+
+.membership-advantages {
+    font-weight:400;
+    font-size:22px;
+    line-height:33px;
+    margin-bottom:24px;
+    color:#A9A9AA;
+}
+
+.advantages-item {
+    font-weight:500;
+    font-size:16px;
+    line-height:24px;
+    color:#151515;
+    padding-left:30px;
+    position:relative;
+}
+
+.advantages-item:not(:last-child) {
+    margin-bottom:16px;
+}
+
+.advantages-item:before {
+    content:"";
+    width:20px;
+    height:20px;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    position:absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.advantages-item.tick:before{
+    background-image:url(./Tick.svg)
+}
+
+.advantages-item.cross:before{
+    background-image:url(./Cross.svg)
+}
+
+.price {
+    padding-top:70px;
+    color:#FFFFFF;
+}
+
+.number { 
+    font-weight:700;
+    font-size:32px;
+    line-height:40px;
+}
+
+.advantages-button {
+    background-color: #556293;
 }
