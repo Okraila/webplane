@@ -29,7 +29,56 @@ header {
     z-index:10;
 }
 
-@media screen and (max-width:1024px)  
+.menu-button {
+    display:none;
+}
+
+@media screen and (max-width:1024px) {
+    .menu-button{
+        background-color:transparent;
+        border:none;
+        outline:none;
+        display:block;
+        width:30px;
+        height:30px;
+        position:relative;
+        z-index:2;
+        overflow:hidden;
+    }
+}  
+
+.menu-button .bar {
+    width:30px;
+    height:4px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -30%);
+    background-color:black;
+    transition:0.3s;
+}
+
+.menu-button .bar:nth-child(2) {
+    top: (50% - 9px);
+}
+
+.menu-button .bar:nth-child(3) {
+    top: (50% + 9px);
+}
+
+.menu-button.active .bar:nth-child(1) {
+    display:none;
+}
+
+.menu-button.active .bar:nth-child(2) {
+    top:50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu-button.active .bar:nth-child(2) {
+    top:50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
 
 .container {
     max-width:1150px;
@@ -63,6 +112,24 @@ header {
     margin-left: 95px;
     align-items: center;
 }
+
+@media screen and (max-width:1824px) {
+    .menu-button{
+        position:fixed;
+        top:0;
+        left:0;
+        padding:15px;
+        background-color:white;
+        transition:0.5s;
+        transform:translateX(100%);
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .nav-list.active{
+        transform:translateX(0);
+    }
+}  
 
 .new-link {
     font-style: normal;
@@ -213,6 +280,12 @@ h2:before {
     position:relative;
 }
 
+@media screen and (max-width:768px) {
+    .business-top .container, .business-bottom .container {
+        flex-direction: column;
+    }
+}
+
 img {
     display:block;
     max-width:100%;
@@ -251,6 +324,17 @@ section {
     border-radius: 0px 50px 50px 0px;
     z-index:-1;
 }
+
+@media screen and (max-width:768x) {
+    .business-top::before {
+        height:524px;
+    }
+
+    .business-bottom::before {
+        height:524px;
+        top:250px;
+    }
+}  
 
 .business-bottom:before {
     content:"";
